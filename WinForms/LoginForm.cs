@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +20,14 @@ namespace WinForms
 
         private void enterButton(object sender, EventArgs e)
         {
-            if(this.loginText.Text == "Hi" && this.passwordText.Text == "12345")
-            {
-                this.informationText.Text = "Perfect";
-            }
-            else
-            {
-                this.informationText.Text = "Error";
-            }
+            string loginUser = loginText.Text;
+            string passUser = passwordText.Text;
+
+            DataBase db = new DataBase();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("select * from login");
         }
 
         private void closeButton_Click(object sender, EventArgs e)
