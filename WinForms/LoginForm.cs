@@ -27,7 +27,22 @@ namespace WinForms
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("select * from login");
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `login` WHERE `username` = @lU AND `userpassword` = @pU ", db.GetConnection());//sql команда и к какой бд подключаемся
+
+            command.Parameters.Add("@lU", MySqlDbType.VarChar).Value = loginUser;
+            command.Parameters.Add("@pU", MySqlDbType.VarChar).Value = passUser;
+
+            adapter.SelectCommand = command;//выполняем команду(comand)
+            adapter.Fill(table);//записываем в table
+
+            if(table.Rows.Count>0)//если запись есть значит авторизован
+            {
+                MessageBox.Show("Sucsessfull");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void closeButton_Click(object sender, EventArgs e)
