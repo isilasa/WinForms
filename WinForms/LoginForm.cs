@@ -16,7 +16,13 @@ namespace WinForms
         public LoginForm()
         {
             InitializeComponent();
+
+            loginText.Text = "Login";
+            loginText.ForeColor = Color.Gray;
+
         }
+
+
 
         private void enterButton(object sender, EventArgs e)
         {
@@ -35,7 +41,7 @@ namespace WinForms
             adapter.SelectCommand = command;//выполняем команду(comand)
             adapter.Fill(table);//записываем в table
 
-            if(table.Rows.Count>0)//если запись есть значит авторизован
+            if (table.Rows.Count > 0) //если запись есть значит авторизован
             {
                 MessageBox.Show("Sucsessfull");
             }
@@ -69,6 +75,44 @@ namespace WinForms
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+
+        private void loginText_MouseEnter(object sender, EventArgs e)
+        {
+            informationText.Text = "Input name";
+        }
+
+        private void passwordText_MouseEnter(object sender, EventArgs e)
+        {
+            informationText.Text = "input password";
+        }
+
+        private void crossRegistration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginText_Enter(object sender, EventArgs e)
+        {
+            if (loginText.Text == "Login")
+            {
+                loginText.Text = null;
+                loginText.ForeColor = Color.Black;
+            }
+        }
+
+        private void loginText_Leave(object sender, EventArgs e)
+        {
+            if (loginText.Text == "")
+                loginText.Text = "Login";
+        }
+
+        private void crossRegistration_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            RegistrationForms registDorm = new RegistrationForms();
+            registDorm.Show();
         }
     }
 }

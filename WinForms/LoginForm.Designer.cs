@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.crossRegistration = new System.Windows.Forms.LinkLabel();
             this.informationText = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button234 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.loginText = new System.Windows.Forms.TextBox();
@@ -47,8 +48,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.crossRegistration);
             this.panel1.Controls.Add(this.informationText);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button234);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.passwordText);
             this.panel1.Controls.Add(this.loginText);
@@ -62,6 +64,19 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // crossRegistration
+            // 
+            this.crossRegistration.AutoSize = true;
+            this.crossRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.crossRegistration.Location = new System.Drawing.Point(173, 363);
+            this.crossRegistration.Name = "crossRegistration";
+            this.crossRegistration.Size = new System.Drawing.Size(128, 26);
+            this.crossRegistration.TabIndex = 6;
+            this.crossRegistration.TabStop = true;
+            this.crossRegistration.Text = "Registration";
+            this.crossRegistration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.crossRegistration_LinkClicked);
+            this.crossRegistration.Click += new System.EventHandler(this.crossRegistration_Click);
+            // 
             // informationText
             // 
             this.informationText.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -72,22 +87,22 @@
             this.informationText.TabIndex = 2;
             this.informationText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // button234
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(108, 304);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 56);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Enter";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.enterButton);
+            this.button234.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button234.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button234.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button234.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button234.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button234.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button234.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button234.Location = new System.Drawing.Point(108, 304);
+            this.button234.Name = "button234";
+            this.button234.Size = new System.Drawing.Size(270, 56);
+            this.button234.TabIndex = 5;
+            this.button234.Text = "Enter";
+            this.button234.UseVisualStyleBackColor = false;
+            this.button234.Click += new System.EventHandler(this.enterButton);
             // 
             // pictureBox2
             // 
@@ -112,6 +127,7 @@
             this.passwordText.Size = new System.Drawing.Size(200, 22);
             this.passwordText.TabIndex = 3;
             this.passwordText.UseSystemPasswordChar = true;
+            this.passwordText.MouseEnter += new System.EventHandler(this.passwordText_MouseEnter);
             // 
             // loginText
             // 
@@ -122,6 +138,9 @@
             this.loginText.Name = "loginText";
             this.loginText.Size = new System.Drawing.Size(200, 22);
             this.loginText.TabIndex = 2;
+            this.loginText.Enter += new System.EventHandler(this.loginText_Enter);
+            this.loginText.Leave += new System.EventHandler(this.loginText_Leave);
+            this.loginText.MouseEnter += new System.EventHandler(this.loginText_MouseEnter);
             // 
             // pictureBox1
             // 
@@ -200,8 +219,9 @@
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.TextBox loginText;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label informationText;
         private System.Windows.Forms.Label closeButton;
+        private System.Windows.Forms.Button button234;
+        private System.Windows.Forms.LinkLabel crossRegistration;
     }
 }
