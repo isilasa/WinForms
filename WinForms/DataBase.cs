@@ -10,7 +10,7 @@ namespace WinForms
 {
     class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server = localhost;port = 3306; username = root; password = 1123581321Bkmz; database = users");
+        MySqlConnection connection = new MySqlConnection("server = localhost;port = 3306; username = root; password = yourPassword; database = users");
 
         public void OpenConnection()
         {
