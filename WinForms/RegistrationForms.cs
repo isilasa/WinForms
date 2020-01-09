@@ -56,7 +56,7 @@ namespace WinForms
                 return;
 
             DataBase db = new DataBase();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `login` (`username`, `userpassword`) VALUES (@login , @password) ",db.GetConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `login` (`username`, `userpassword`) VALUES (@login , @password) ", db.GetConnection());
             command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginText.Text;
             command.Parameters.Add("@password", MySqlDbType.VarChar).Value = passwordText.Text;
 
