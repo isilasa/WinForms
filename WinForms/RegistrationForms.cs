@@ -61,7 +61,6 @@ namespace WinForms
             command.Parameters.Add("@password", MySqlDbType.VarChar).Value = passwordText.Text;
 
             db.OpenConnection();
-
             if (command.ExecuteNonQuery() == 1)//если команда которую мы вполняем прошла успешна то ...
             {
                 MessageBox.Show("Account was created");
